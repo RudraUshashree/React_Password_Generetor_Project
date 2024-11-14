@@ -1,15 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
+import Currency from './components/currency.js';
 
 function App() {
+  // Background color change task
   const [color, setColor] = useState("white");
 
+  // Password generator task
   const [length, setLength] = useState(0);
   const [allowNumber, setAllowNumber] = useState(false);
   const [allowChar, setAllowChar] = useState(false);
   const [passwordInput, setPasswordInput] = useState("");
 
-  //useRef for password selection.
+  //useRef for highlighting the selected password in input.
   const passwordRef = useRef(null);
 
   const copyPasswordToClipBoard = useCallback(() => {
@@ -30,7 +33,6 @@ function App() {
     }
 
     setPasswordInput(pass);
-
   }, [length, allowNumber, allowChar, setPasswordInput])
   
   useEffect(() => {
@@ -39,6 +41,10 @@ function App() {
 
   return (
     <>
+      {/* Currency task */}
+      <Currency />
+
+      {/* Password generator task */}
       <div className="password-generator-main">
         <div className='password-generator-box'>
           <h2>Password Generator</h2>
@@ -54,6 +60,7 @@ function App() {
         </div> 
       </div>
 
+      {/* Background color change task */}
       <div className="full-screen" style={{backgroundColor:color}}>
         <div className="colorsDiv">
           <button className="btnColor" onClick={() => setColor("red")} style={{backgroundColor:"red"}}>Red</button>

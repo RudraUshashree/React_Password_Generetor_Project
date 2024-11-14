@@ -1,0 +1,15 @@
+.currency-input-main {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+  }
+  
+    .currency-input-box {
+        max-width: 100%;
+        width: 90%;
+        background-color: rgb(219, 205, 205);
+        color: rgb(1, 1, 1);
+        margin: 0;
+        padding: 10px;
+        border-radius: 10px;
+    }
