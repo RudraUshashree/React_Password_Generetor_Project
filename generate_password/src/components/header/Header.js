@@ -25,6 +25,9 @@ function Header() {
                     <li className="nav-item">
                     <NavLink to='/users' className={({isActive}) => `nav-link ${isActive ? 'active-link' : 'inactive-link'}`}>User</NavLink>
                     </li>
+                    <li className="nav-item">
+                    <NavLink to='/todo' className={({isActive}) => `nav-link ${isActive ? 'active-link' : 'inactive-link'}`}>To Do</NavLink>
+                    </li>
                 </ul>
                 <form className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
