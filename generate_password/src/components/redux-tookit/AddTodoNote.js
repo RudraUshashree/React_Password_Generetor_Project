@@ -10,7 +10,9 @@ function AddTodoNote() {
     
     useEffect(() => {
       if(selectedNote.isEditable) {
-        setNote(selectedNote.todoNote.note || "");
+        setNote(selectedNote.todoNote.note);
+      } else {
+        setNote("");
       }
     }, [selectedNote])
 
