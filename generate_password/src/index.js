@@ -10,6 +10,9 @@ import Passwordgenerator from './components/password-generator/Passwordgenerator
 import Currency from './components/currency-converter/Currency';
 import Users from './components/users/Users';
 import Todonotes from './components/context-api/Todonotes';
+import TodoNotes from './components/redux-tookit/TodoNotes';
+import { Provider } from 'react-redux';
+import { store } from './components/redux-tookit/app/store';
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -18,16 +21,17 @@ const router = createBrowserRouter(
       <Route path='password-generator' element={<Passwordgenerator />} />
       <Route path='currency-converter' element={<Currency />} />
       <Route path='users/:userText' element={<Users />} />
-      <Route path='todo' element={<Todonotes />} />
+      <Route path='context-api-todo' element={<Todonotes />} />
+      <Route path='redux-toolkit-todo' element={<TodoNotes />} />
     </Route>
   ])
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router}/>
-  </React.StrictMode>
+  </Provider>
 );
 
 reportWebVitals();
